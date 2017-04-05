@@ -1,0 +1,14 @@
+{
+  "name": "midsummer-angular2-slides",
+  "version": "1.0.0",
+  "description": "Slides pour l’atelier Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "reveal.js": "^3.4.1"
+  }
+}
