@@ -1,4 +1,8 @@
 [
     "index.md",
-    "presentation.md"
+    "presentation.md",
+    "es6.md",
+    "typescript.md",
+    "di.md",    
+    "angular-base.md"
 ]

@@ -1,10 +1,51 @@
+# ATELIER ANGULAR
 
-# Slides pour l’atelier Angular
+<div class="angular-logo"></div>
 
-From the terminal, pop in:
+---
 
-  ```yo reveal:slide "Slide Title"```
+## Index
 
-Available options:
+### Jour 1
 
- ```--markdown --attributes --notes```
+Introduction à ES6/ES2015
+
+Introduction à TypeScript
+
+Introduction à Angular 
+
+* Création d'un projet
+* Modules, composants, directives, pipes
+* Injection de dépendances
+
+---
+
+## Index
+
+### Jour 2
+
+Routage
+
+Http
+
+@ngrx
+
+i18n
+
+---
+
+## Index
+
+### Jour 3
+
+Tests unitaires, TDD
+
+---
+
+## Pré-requis
+
+* node.js v6.10.x LTS
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [chrome v∞](https://blog.codinghorror.com/the-infinite-version/)
+    * [Augury](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd?hl=en)
+    * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)

@@ -17,7 +17,7 @@
     
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="bower_components/highlightjs/styles/zenburn.css">
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/atom-one-dark.css">
 
         <!-- Printing and PDF exports -->
         <script>
@@ -38,19 +38,7 @@
         <div class="reveal">
 
             <div class="slides">
-
-                <% _.forEach(slides, function(slide) { %>
-                    <% if (!_.isArray(slide)) { %>
-                        <%= section(slide) %>
-                    <% } %>
-                    <% if (_.isArray(slide)) { %>
-                        <section>
-                            <% _.forEach(slide, function(verticalslide) { %>
-                                <%= section(verticalslide) %>
-                            <% }); %>
-                        </section>
-                    <% } %>
-                <% }); %>
+<% _.forEach(slides, function(slide) { %><% if (!_.isArray(slide)) { %><%= section(slide) %><% } %><% if (_.isArray(slide)) { %><section><% _.forEach(slide, function(verticalslide) { %><%= section(verticalslide) %><% }); %></section><% } %><% }); %>
             </div>
 
         </div>
@@ -64,9 +52,12 @@
           Reveal.initialize({
             controls: true,
             progress: true,
+            slideNumber: true,
             history: true,
-            center: true,
-
+            center: false,
+            markdown: {
+                smartypants: true,
+            },
             transition: 'slide', // none/fade/slide/convex/concave/zoom
 
             // Optional reveal.js plugins
