@@ -27,7 +27,6 @@ $backgroundColor: #222;
 $mainColor: #fff;
 $headingColor: #86A831;
 
-
 $mainFont: 'Lato', 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Lato', 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
@@ -101,6 +100,10 @@ body {
         }
     }
 
+    img.plain {
+        background: none;
+    }
+
     .left {
         display: block;
         float: left;
@@ -108,7 +111,7 @@ body {
     }
 
     .right {
-        display: block;        
+        display: block;
         float: right;
         width: 50%;
     }
@@ -131,6 +134,17 @@ body {
         width: 60vw;
         margin-top: 5em;
         background-image: url(/slides/images/typescript.svg);
+    }
+
+    .pipe-logo {
+        @extend .main-logo;
+        width: 20vw;
+        margin-top: 5em;
+        background-image: url(https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg);
+    }
+
+    .warning {
+        color: #f84;
     }
 }
 

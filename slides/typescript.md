@@ -1,4 +1,4 @@
-## Introduction à TypeScript
+# TypeScript
 
 <div class="typescript-logo"></div>
 
@@ -14,6 +14,16 @@ https://www.typescriptlang.org/
 * Développé par Microsoft
 * Date de 2012, version actuelle 2.2 (22 février 2017)
 * Auto-complétion intelligente de type "Intellisense" supportée par de nombreux IDE (Visual Studio, Visual Studio code, plugins pour Eclipse, Atom...)
+
+---
+
+## Préparation
+
+Installation de ts-node
+
+```bash
+npm install -g typescript ts-node
+```
 
 ---
 
@@ -95,7 +105,7 @@ quImporte = window.document;
 
 ### `void`
 
-Rien. Utilisé généralement comme type de retour pour les fonctions qui ne retournent rien : 
+Rien. Utilisé généralement comme type de retour pour les fonctions qui ne retournent rien :
 
 ```typescript
 function alerteMoi(): void {
@@ -147,7 +157,7 @@ let alpacaWithAge: AlpacaWithAge = ['Monica', 5];
 Un type n'a pas a être spécifié explicitement s'il peut être automatiquement déduit :
 
 ```typescript
-let a /* : string */ = 'Hello!'; 
+let a /* : string */ = 'Hello!';
 a = 2; // Erreur !
 ```
 
@@ -167,9 +177,9 @@ a = 'Texte'; // Erreur !
 
 ## Classes
 
-Les classes Typescript sont basées sur <a href="#/es6classes">les classes ES6</a>. 
+Les classes Typescript sont basées sur <a href="#/es6classes">les classes ES6</a>.
 
-Elles peuvent avoir des membres privés, protégés et publics. 
+Elles peuvent avoir des membres privés, protégés et publics.
 
 L'accès par défaut est public.
 
@@ -177,7 +187,7 @@ L'accès par défaut est public.
 class Alpaca {
     private name: string;
     private age?: number;
-    
+
     constructor(name: string, age?: number /* Paramètre optionnel */) {
         this.name = name;
         this.age = age;
@@ -201,7 +211,7 @@ Une propriété peut être marquée comme `readonly`. Elle ne peut alors être m
 class Alpaca {
     readonly name: string;
     readonly age: number = 8;
-    
+
     constructor(name: string) {
         this.name = name;
     }
@@ -220,7 +230,7 @@ al.age = 3; // Erreur !
 class Alpaca {
     private name: string;
     private age?: number;
-    
+
     constructor(name: string, age?: number) {
         this.name = name;
         this.age = age;
@@ -238,7 +248,7 @@ class Alpaca {
 
 ---
 
-## Classes 
+## Classes
 
 ### Classes abstraites
 
@@ -398,7 +408,7 @@ const alpacaFactory: AlpacaFactory = Alpaca;
 
 ## Fonctions
 
-Paramètres optionnels ou par défaut 
+Paramètres optionnels ou par défaut
 
 ```typescript
 type NameBuilder = (fistName: string, lastName?: string) => string;
@@ -410,7 +420,7 @@ function buildName1(firstName: string, lastName?: string) {
         return firstName;
 }
 
-const buildName2 = (firstName: string, lastName = 'McBob') 
+const buildName2 = (firstName: string, lastName = 'McBob')
     => firstName + " " + lastName;
 
 let b1: NameBuilder = buildName1;
@@ -543,8 +553,8 @@ let roberto = new Alpaca('Roberto', 3)
 class VaccinationLog {
     constructor( public vaccinationDates: Date[] ) {}
 }
-let robertosVaccinationLog = new VaccinationLog([ 
-    new Date('2015-06-12'), 
+let robertosVaccinationLog = new VaccinationLog([
+    new Date('2015-06-12'),
     new Date('2017-01-01')
 ]);
 

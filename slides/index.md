@@ -12,11 +12,14 @@ Introduction à ES6/ES2015
 
 Introduction à TypeScript
 
-Introduction à Angular 
+Introduction à Angular
 
 * Création d'un projet
 * Modules, composants, directives, pipes
 * Injection de dépendances
+* Utilisation de services
+
+Intermède: architecture de l'application
 
 ---
 
@@ -24,11 +27,14 @@ Introduction à Angular
 
 ### Jour 2
 
+Http et rxjs
+
+* Introduction à rxjs
+* Utilisation de HTTP
+
 Routage
 
-Http
-
-@ngrx
+Formulaires
 
 i18n
 
@@ -37,6 +43,11 @@ i18n
 ## Index
 
 ### Jour 3
+
+@ngrx
+
+* Concepts de base
+* Implémentation dans l'application
 
 Tests unitaires, TDD
 

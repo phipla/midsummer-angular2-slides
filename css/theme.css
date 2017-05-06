@@ -322,6 +322,8 @@ body {
     .reveal pre code {
       max-height: none;
       padding: 0.4em 0.8em; }
+  .reveal img.plain {
+    background: none; }
   .reveal .left {
     display: block;
     float: left;
@@ -330,7 +332,7 @@ body {
     display: block;
     float: right;
     width: 50%; }
-  .reveal .main-logo, .reveal .angular-logo, .reveal .typescript-logo {
+  .reveal .main-logo, .reveal .angular-logo, .reveal .typescript-logo, .reveal .pipe-logo {
     background-repeat: no-repeat;
     background-size: contain;
     width: 25vw;
@@ -342,3 +344,9 @@ body {
     width: 60vw;
     margin-top: 5em;
     background-image: url(/slides/images/typescript.svg); }
+  .reveal .pipe-logo {
+    width: 20vw;
+    margin-top: 5em;
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg); }
+  .reveal .warning {
+    color: #f84; }

@@ -3,6 +3,17 @@
     "presentation.md",
     "es6.md",
     "typescript.md",
-    "di.md",    
-    "angular-base.md"
+    "di.md",
+    "angular-base.md",
+    "angular-components.md",
+    "angular-directives.md",
+    "angular-pipes.md",
+    "angular-modules.md",
+    "angular-services.md",
+    "angular-routing.md",
+    "angular-rxjs.md",
+    "angular-ngrx.md",
+    "angular-tdd.md",
+    "angular-i18n.md",
+    "angular-forms.md"
 ]

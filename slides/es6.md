@@ -1,4 +1,4 @@
-## Introduction à ES6/ES2015
+# Introduction à ES6/ES2015
 
 ### ES5 Introduit en 2009
 * `'use strict'`
@@ -55,7 +55,7 @@ function varTest() {
 ```javascript
 function varTest() {
   const x = { value: 2 };
-  
+
   x = { value: 4 }; // Erreur: re-définit la référence !
   x.value = 4; // OK: ne re-définit pas la référence
 }
@@ -67,10 +67,10 @@ En ES6, il est généralement d'usage de ne plus utiliser `var` du tout, mais d'
 
 ## Chaînes de caractères
 
-Les chaînes de caractères peuvent, en plus des délimiteurs 
-<code style="font-size: 2em; position: relative; top: 0.3em; line-height: 0.5">'</code> et 
-<code style="font-size: 2em; position: relative; top: 0.3em; line-height: 0.5">"</code>, 
-utiliser le nouveau délimiteur 
+Les chaînes de caractères peuvent, en plus des délimiteurs
+<code style="font-size: 2em; position: relative; top: 0.3em; line-height: 0.5">'</code> et
+<code style="font-size: 2em; position: relative; top: 0.3em; line-height: 0.5">"</code>,
+utiliser le nouveau délimiteur
 <code style="font-size: 2em; position: relative; top: 0.3em; line-height: 0.5">`</code>.
 
 Ce dernier permet d'utiliser des chaînes multi-lignes, et permet également d'interpoler des expressions Javascripts arbitraires en utilisant `${}`
@@ -212,8 +212,8 @@ class Multiplier {
     this.factor = factor;
   }
 
-  multiply(a) {
-    [ 1, 2, 3 ].map(function (a) {
+  multiply(arr) {
+    return arr.map(function (a) {
         // /!\ Danger ! this n'est pas défini ici !
         return this.factor * a;
     })
@@ -228,8 +228,8 @@ class Multiplier {
     this.factor = factor;
   }
 
-  multiply(a) {
-    [ 1, 2, 3 ].map(a => this.factor * a);
+  multiply(arr) {
+    return arr.map(a => this.factor * a);
   }
 }
 ```
@@ -294,7 +294,7 @@ map.get('1'); undefined
 
 ## Collections: `WeakMap`
 
-Une "WeakMap" est un dictionnaire dont les références sont "faibles". 
+Une "WeakMap" est un dictionnaire dont les références sont "faibles".
 Ses clés ne peuvent être que des objets, ses valeurs peuvent être n'importe quoi.
 
 ```javascript
@@ -404,9 +404,9 @@ console.log(alpacaActions.next().value); // 'The alpaca sleeps'
 Les générateurs sont *itérables* au même titre que des `Arrays`
 
 ```javascript
-for (let action of alpacaActions()) { 
+for (let action of alpacaActions()) {
   console.log(action) ;
-} 
+}
 ```
 
 ---
@@ -423,8 +423,8 @@ const obj = {
   alpacaList, // Équivaut à écrire: alpacaList: alpacaList
 
   // Permet d'utiliser le résultat d'une expression comme clé
-  [ 'is' + animal ]: true, 
-  
+  [ 'is' + animal ]: true,
+
   // Équivaut à getAlpaca: function getAlpaca(index) { ... }
   getAlpaca(index) {
     return this.alpacaList[index];
@@ -450,6 +450,8 @@ Supporte les valeurs par défaut
 [a = 5, b = 7] = [1]; // a = 1; b = 7
 ```
 
+## Affectation par décomposition (destructuring)
+
 Permet d'échanger deux variables (ou plus)
 
 ```javascript
@@ -457,6 +459,14 @@ let a = 1;
 let b = 3;
 
 [a, b] = [b, a]; // a = 3; b = 1;
+```
+
+Ne fonctionne pas (encore) avec es objets
+
+```javascript
+let a = { a: 5, b: 2 };
+let b = { ...a }; // Impossible... pour l'instant (mais possible avec ES7 et/ou Typescript)
+let c = { ...a, b: 3 }; // Idem
 ```
 
 ---

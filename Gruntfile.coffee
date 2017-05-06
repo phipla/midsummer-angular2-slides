@@ -47,9 +47,8 @@ module.exports = (grunt) ->
 
             livereload:
                 options:
-                    port: 9000
+                    port: process.env.PORT || 9000
                     base: '.'
-                    open: true
                     livereload: true
 
         coffeelint:

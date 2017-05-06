@@ -23,7 +23,7 @@ npm install -g @angular/cli
 Création du projet
 
 ```bash
-ng new alpaca-farm
+ng new alpaca-farm -p msw
 ```
 
 ---
@@ -55,73 +55,46 @@ export class AppModule { }
 
 ---
 
-## Modules
+## Anatomie d’un module
 
 Une application a un et un seul module principal, qu'on appelle par convention AppModule.
 
----
+### Déclarations
 
-## Composants
-
-`app.component.ts` 
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'app works!';
-}
-```
-`app.component.html` 
-```html
-<h1>
-  {{title}}
-</h1>
-```
-
----
-
-## Saisie de données
-
-`app.component.html` 
-
-```html
-<h1>{{title}}</h1>
-<input #name>
-<button (click)="addAlpaca(name)">Nouvel alpaga</button>
-```
-
-`app.component.ts` 
+composants, directives, pipes contenus dans ce module
 
 ```typescript
-class Alpaca {
-  constructor(public name: string) {}
-}
-
-@Component({ /* .. */ })
-export class AppComponent {
-  title = 'AlpagaSoft';
-  alpacas: Alpaca[] = [];
-  addAlpaca(name: HTMLInputElement) {
-    this.alpacas.push(new Alpaca(name.value));
-    console.log(`Bienvenue, ${name}`);
-  }
-}
+  declarations: [ AppComponent ],
 ```
+
+### Imports
+
+modules dont les composants, directives, pipes seront importés
+
+```typescript
+  imports: [ BrowserModule, FormsModule, HttpModule ],
+```
+
+<h3 id="i_hope_whoever_standardized_html5_2_4_burns_in_hell">Exports</h3>
+
+Ce qui sera exporté par se module pour être importé par d'autres. N'existe pas sur un module racine
 
 ---
 
-## Affichage des données
+## Anatomie d’un module
 
-```html
-<ul>
-  <li *ngFor="let alpaca of alpacas">
-    {{ alpaca.name }}
-  </li>
-</ul>
+### Providers
+
+Liste des composants injectables utilisés par ce module
+
+```typescript
+  providers: [],
 ```
 
+### Bootstrap
+
+N'existe *que* sur un module racine. Le composant principal de l'application (ou les composants principaux)
+
+```typescript
+  bootstrap: [AppComponent],
+```

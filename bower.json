@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "reveal.js": "~3.4.0",
-    "highlightjs": "~9.10.0",
+    "highlightjs": "9.10.0",
     "font-awesome": "^4.7.0"
   }
 }
