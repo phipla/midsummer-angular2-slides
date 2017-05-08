@@ -1,4 +1,17 @@
-## Angular
+# Angular
+
+<div class="angular-logo"></div>
+
+---
+
+## Ressources Angular
+
+<img style="float: right; width: 10vw" class="plain" src="https://www.ng-book.com/images/ng2/ng-book-2-as-book-cover-pigment-550-book-2-angular-4.png">
+
+* https://angular.io/docs/ts/latest/
+* https://angular-2-training-book.rangle.io/
+* https://www.ng-book.com/2/
+* https://angular-university.io/
 
 ---
 
@@ -24,6 +37,27 @@ Création du projet
 
 ```bash
 ng new alpaca-farm -p msw
+```
+
+---
+
+## HTML principal du projet
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AlpacaFarms</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <msw-root>Loading...</msw-root>
+</body>
+</html>
 ```
 
 ---

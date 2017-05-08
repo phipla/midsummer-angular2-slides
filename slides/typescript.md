@@ -17,6 +17,12 @@ https://www.typescriptlang.org/
 
 ---
 
+## Ressources
+
+* https://www.typescriptlang.org/docs/tutorial.html
+
+---
+
 ## Préparation
 
 Installation de ts-node

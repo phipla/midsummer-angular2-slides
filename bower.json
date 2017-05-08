@@ -4,6 +4,7 @@
   "dependencies": {
     "reveal.js": "~3.4.0",
     "highlightjs": "9.10.0",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "reveal.js-plugins": "*"
   }
 }

@@ -44,34 +44,48 @@
         </div>
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script src="js/CustomElements.min.js"></script>
+        <script src="js/element.js"></script>
+        <svg height="0"><filter height="130%" id="dropshadow"><feGaussianBlur in="SourceAlpha" stdDeviation="0.05"></feGaussianBlur><feOffset dx="0" dy="0.05" result="offsetblur"></feOffset><feFlood flood-color="rgba(0,0,0,0.4)"></feFlood><feComposite in2="offsetblur" operator="in"></feComposite><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></svg>
         <script>
 
           // Full list of configuration options available at:
           // https://github.com/hakimel/reveal.js#configuration
-          Reveal.initialize({
-            controls: true,
-            progress: true,
-            slideNumber: true,
-            history: true,
-            center: false,
-            markdown: {
-                smartypants: true,
-            },
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+                markdown: {
+                    smartypants: true,
+                },
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+                chalkboard: {
+                    color: [ 'yellow', 'rgba(255,255,255,0.5)' ],
+                    background: [ 'transparent' , 'bower_components/reveal.js-plugins/chalkboard/img/blackboard.png' ],
+                },
 
-            // Optional reveal.js plugins
-            dependencies: [
-              { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-              { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-              { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-              { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-              { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
-              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
-            ]
-          });
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } },
+                    { src: 'bower_components/reveal.js-plugins/chalkboard/chalkboard.js', async: true },
+                ],
 
+                keyboard: {
+                    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+                    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+                    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+                    8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+                    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+                },
+            });
         </script>
     </body>
-
 </html>

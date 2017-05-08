@@ -322,6 +322,10 @@ body {
     .reveal pre code {
       max-height: none;
       padding: 0.4em 0.8em; }
+  .reveal hr {
+    border-color: #abb2bf;
+    border-width: 2px;
+    border-style: solid; }
   .reveal img.plain {
     background: none; }
   .reveal .left {
@@ -350,3 +354,42 @@ body {
     background-image: url(https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg); }
   .reveal .warning {
     color: #f84; }
+  .reveal .callback {
+    color: #fff !important;
+    background: #48f;
+    display: inline-block;
+    border-radius: 1000px;
+    position: relative;
+    top: -0.4em;
+    font-size: 80%;
+    padding: 0.2em 0.4em;
+    line-height: 1; }
+  .reveal .callback * {
+    color: #fff !important; }
+  .reveal figure {
+    text-align: center; }
+  .reveal .attribution {
+    color: #888;
+    font-size: 60%;
+    font-style: italic; }
+  .reveal .block {
+    background-color: #282c34;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 0 1.6rem; }
+  .reveal .block-header {
+    margin: 0;
+    padding: 0.8rem 2rem 0.8rem;
+    background-color: #4C679B;
+    color: #222;
+    font-size: 80%;
+    font-style: italic; }
+  .reveal .block-content {
+    padding: 0 2rem 1rem; }
+  .reveal .sandboxRoot {
+    background: #99a0af !important;
+    font-size: 60%;
+    color: #222; }
+  .reveal .operatorBox {
+    background-color: #282c34;
+    color: #fff; }

@@ -1,5 +1,9 @@
 # Introduction à ES6/ES2015
 
+---
+
+## Historique
+
 ### ES5 Introduit en 2009
 * `'use strict'`
 * JSON
@@ -17,6 +21,14 @@
 * ...
 
 ### ES8...
+
+---
+
+## Ressources
+
+* http://es6-features.org/
+* http://node.green/
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ---
 

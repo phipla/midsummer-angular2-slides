@@ -29,7 +29,7 @@ Par convention, ces fichiers sont généralement groupés dans un même dossier
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'msw-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
