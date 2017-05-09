@@ -293,6 +293,9 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
+* {
+  box-sizing: border-box; }
+
 body {
   background-image: url(/resources/midsummer-thin.svg);
   background-color: #222;
@@ -303,6 +306,8 @@ body {
 
 .reveal {
   font-weight: 300; }
+  .reveal sub, .reveal sup {
+    font-size: 75%; }
   .reveal .slides {
     text-align: left; }
   .reveal h1 {
@@ -317,7 +322,7 @@ body {
     color: #FF601E; }
   .reveal pre {
     font-size: 0.8em;
-    margin: 0.4em 0;
+    margin: 1rem 0;
     width: auto; }
     .reveal pre code {
       max-height: none;
@@ -343,17 +348,19 @@ body {
     height: 25vw;
     margin: 0 auto; }
   .reveal .angular-logo {
-    background-image: url(/slides/images/angular.svg); }
+    background-image: url(/resources/angular.svg); }
   .reveal .typescript-logo {
     width: 60vw;
     margin-top: 5em;
-    background-image: url(/slides/images/typescript.svg); }
+    background-image: url(/resources/typescript.svg); }
   .reveal .pipe-logo {
     width: 20vw;
     margin-top: 5em;
     background-image: url(https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg); }
   .reveal .warning {
     color: #f84; }
+  .reveal .highlight {
+    color: #42affa; }
   .reveal .callback {
     color: #fff !important;
     background: #48f;
@@ -366,6 +373,13 @@ body {
     line-height: 1; }
   .reveal .callback * {
     color: #fff !important; }
+  .reveal .filename {
+    border-radius: 1rem 1rem 0 0;
+    color: #222;
+    font-size: 60%;
+    background: #99a0af;
+    margin-bottom: -1rem;
+    padding: 0.5rem 1rem; }
   .reveal figure {
     text-align: center; }
   .reveal .attribution {
@@ -386,6 +400,18 @@ body {
     font-style: italic; }
   .reveal .block-content {
     padding: 0 2rem 1rem; }
+  .reveal .row {
+    clear: both;
+    margin: 1em -0.5em; }
+  .reveal .row::after {
+    content: "";
+    display: inline-block;
+    clear: both; }
+  .reveal .col-4 {
+    padding: 0 0.5em;
+    width: 33.33333%;
+    float: left;
+    min-height: 1px; }
   .reveal .sandboxRoot {
     background: #99a0af !important;
     font-size: 60%;

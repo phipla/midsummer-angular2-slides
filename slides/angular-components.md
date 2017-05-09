@@ -24,7 +24,7 @@ Par convention, ces fichiers sont généralement groupés dans un même dossier
 
 ## Composants
 
-`app.component.ts`
+<div class="filename">app.component.ts</div>
 ```typescript
 import { Component } from '@angular/core';
 
@@ -89,7 +89,7 @@ Le pseudo-sélecteur `:host` permet de sélectionner l'élément HTML racine du 
 
 ## Saisie de données (2)
 
-`app.component.ts`
+<div class="filename">app.component.ts</div>
 ```typescript
 class Alpaca {
   constructor(public name: string) {}

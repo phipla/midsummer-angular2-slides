@@ -21,6 +21,14 @@ Canal de communication continu, sur lequel plusieurs valeurs peuvent être émis
 
 ---
 
+## Ressources
+
+* http://rxmarbles.com/
+* http://reactivex.io/rxjs/
+* https://www.learnrxjs.io
+
+---
+
 ## ReactiveX (2)
 
 Cycle de vie d'un observable:
@@ -110,10 +118,55 @@ Il est également possible de combiner des Observables :
 
 ---
 
-## Ressources
+## `mergeMap`
 
-* http://rxmarbles.com/
-* http://reactivex.io/rxjs/
+<img src="resources/mergeMap.png" class="plain" style="width: 25vw; float: right; margin-left: 2em">
+
+Un Observable qui émet des nombres
+
+Une fonction "map" qui prend un nombre en entrée, et qui retourne un Observable
+
+Ledit Observable ré-émet 3 fois le nombre * 10
+
+* * *
+
+```typescript
+let opMergeMap = new Observable(observer => {
+    setTimeout(() => observer.next(1), 1000)
+    setTimeout(() => observer.next(3), 2000)
+    setTimeout(() => observer.next(5), 2500)
+    setTimeout(() => observer.complete(), 3000)
+})
+
+let mapFunc = (i: number)
+    => Observable.interval(250).take(3).map(() => 10 * i)
+opMergeMap.mergeMap(mapFunc).subscribe(/* ... */)
+```
+
+---
+
+## `switchMap`
+
+<img src="resources/switchMap.png" class="plain" style="width: 25vw; float: right; margin-left: 2em">
+
+Un Observable qui émet des nombres
+
+Une fonction "map" qui prend un nombre en entrée, et qui retourne un Observable
+
+Ledit Observable ré-émet 3 fois le nombre * 10
+
+* * *
+
+```typescript
+let opSwitchMap = new Observable(observer => {
+    setTimeout(() => observer.next(1), 1000)
+    setTimeout(() => observer.next(3), 2000)
+    setTimeout(() => observer.next(5), 2500)
+    setTimeout(() => observer.complete(), 3000)
+})
+
+opMergeMap.switchMap(mapFunc).subscribe(/* ... */)
+```
 
 ---
 
@@ -245,3 +298,14 @@ setTimeout(
     2500);
 connectableObservable.connect();
 ```
+
+---
+
+## Sujets
+
+### Subject
+
+À la fois un `Observable` et un `Observer`
+
+### BehaviorSubject
+

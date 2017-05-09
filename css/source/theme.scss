@@ -57,6 +57,10 @@ section.has-light-background {
 @import "../../bower_components/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-image: url(/resources/midsummer-thin.svg);
     background-color: $backgroundColor;
@@ -67,6 +71,10 @@ body {
 }
 
 .reveal {
+    sub, sup {
+        font-size: 75%;
+    }
+
     font-weight: 300;
 
     .slides {
@@ -91,7 +99,7 @@ body {
 
     pre {
         font-size: 0.8em;
-        margin: 0.4em 0;
+        margin: 1rem 0;
         width: auto;
 
         code {
@@ -133,14 +141,14 @@ body {
 
     .angular-logo {
         @extend .main-logo;
-        background-image: url(/slides/images/angular.svg);
+        background-image: url(/resources/angular.svg);
     }
 
     .typescript-logo {
         @extend .main-logo;
         width: 60vw;
         margin-top: 5em;
-        background-image: url(/slides/images/typescript.svg);
+        background-image: url(/resources/typescript.svg);
     }
 
     .pipe-logo {
@@ -152,6 +160,10 @@ body {
 
     .warning {
         color: #f84;
+    }
+
+    .highlight {
+        color: #42affa;
     }
 
     .callback {
@@ -168,6 +180,15 @@ body {
 
     .callback * {
         color: #fff !important;
+    }
+
+    .filename {
+        border-radius: 1rem 1rem 0 0;
+        color: #222;
+        font-size: 60%;
+        background: #99a0af;
+        margin-bottom: -1rem;
+        padding: 0.5rem 1rem;
     }
 
     figure {
@@ -198,6 +219,24 @@ body {
 
     .block-content {
         padding: 0 2rem 1rem;
+    }
+
+    .row {
+        clear: both;
+        margin: 1em -0.5em;
+    }
+
+    .row::after {
+        content: "";
+        display: inline-block;
+        clear: both;
+    }
+
+    .col-4 {
+        padding: 0 0.5em;
+        width: 33.33333%;
+        float: left;
+        min-height: 1px;
     }
 
     .sandboxRoot {

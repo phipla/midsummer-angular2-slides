@@ -54,26 +54,33 @@ export class AlpacaService {
 
 ---
 
+<!-- .slide: id="http-service" -->
+
 ## Requêtes
 
 ```typescript
-  public read(): Observable<Alpaca[]> {
+  public readAll(): Observable<Alpaca[]> {
     return this.http.get(this.url)
-      .map(response => response.json());
+      .map(response => response.json().map(data = new Alpaca(data)));
+  }
+
+  public read(id: number): Observable<Alpaca> {
+    return this.http.get(`${this.url}/${id}`)
+      .map(response => new Alpaca(response.json()));
   }
 
   public create(alpaca: Alpaca): Observable<Alpaca>  {
     return this.http.post(this.url, alpaca)
-      .map(response => response.json());
+      .map(response => new Alpaca(response.json()));
   }
 
   public update(id: number, alpaca: Alpaca): Observable<Alpaca> {
     return this.http.put(`${this.url}/${id}`, alpaca)
-      .map(response => response.json());
+      .map(response => new Alpaca(response.json()));
   }
 
   public delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)
-      .map(response => response.json());
+      .map(response => new Alpaca(response.json()));
   }
 ```

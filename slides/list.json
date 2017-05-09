@@ -8,16 +8,11 @@
     "angular-components.md",
     "angular-directives.md",
     "angular-pipes.md",
-    "angular-modules.md",
     "angular-services.md",
     "angular-di.md",
     "angular-rxjs.md",
     "angular-http.md",
     "angular-routing.md",
-    "angular-i18n.md",
     "angular-forms.md",
-    "angular-components-advanced.md",
-    "angular-ngrx.md",
-    "angular-tdd.md",
-    "angular-animations.md"
+    "angular-ngrx.md"
 ]

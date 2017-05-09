@@ -1,4 +1,8 @@
-##  angular-i18n
+# Internationalisation (i18n)
+
+---
+
+## Installation
 
 This is a new Markdown slide
 
