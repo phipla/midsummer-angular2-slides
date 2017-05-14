@@ -58,6 +58,7 @@ npm install --save @angular/router
 (Installé d'office avec angular-cli)
 
 <div class="filename">app.module.ts</div>
+
 ```typescript
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
@@ -80,6 +81,7 @@ export class AppModule { }
 ## Définition des routes
 
 <div class="filename">app.routes.ts</div>
+
 <pre><code class="typescript" data-trim data-noescape>
 import { Routes } from '@angular/router';
 

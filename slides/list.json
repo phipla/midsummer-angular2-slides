@@ -1,6 +1,7 @@
 [
     "index.md",
     "presentation.md",
+    "angular-intro.md",
     "es6.md",
     "typescript.md",
     "di.md",
@@ -14,5 +15,7 @@
     "angular-http.md",
     "angular-routing.md",
     "angular-forms.md",
-    "angular-ngrx.md"
+    "angular-tdd.md",
+    "angular-ngrx.md",
+    "thanks.md"
 ]

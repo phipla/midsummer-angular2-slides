@@ -25,6 +25,7 @@ Par convention, ces fichiers sont généralement groupés dans un même dossier
 ## Composants
 
 <div class="filename">app.component.ts</div>
+
 ```typescript
 import { Component } from '@angular/core';
 
@@ -90,6 +91,7 @@ Le pseudo-sélecteur `:host` permet de sélectionner l'élément HTML racine du 
 ## Saisie de données (2)
 
 <div class="filename">app.component.ts</div>
+
 ```typescript
 class Alpaca {
   constructor(public name: string) {}
@@ -206,7 +208,6 @@ export class AlpacaSummaryComponent implements OnInit {
     &lt;msw-alpaca
         <mark>[name]</mark>="alpaca.name"
         >&lt;/msw-alpaca>
-    &lt;/li>
 &lt;/div>
 </code></pre>
 
@@ -214,7 +215,6 @@ export class AlpacaSummaryComponent implements OnInit {
     &lt;msw-alpaca
         <mark>name</mark>="Roméo"
         >&lt;/msw-alpaca>
-    &lt;/li>
 </code></pre>
 
 ### À retenir
@@ -310,7 +310,6 @@ export class AlpacaSummaryComponent {
     &lt;msw-alpaca
         <mark>[(name)]</mark>="alpaca.name"
         >&lt;/msw-alpaca>
-    &lt;/li>
 </code></pre>
 
 Équivaut à
@@ -320,7 +319,6 @@ export class AlpacaSummaryComponent {
         [name]="alpaca.name"
         (nameChange)="alpaca.name=$event"
         >&lt;/msw-alpaca>
-    &lt;/li>
 </code></pre>
 
 <img style="float: right; width: 10vw" class="plain" src="resources/bananas-in-a-box.svg">

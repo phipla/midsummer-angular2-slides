@@ -93,8 +93,12 @@ body {
         font-weight: 200;
     }
 
-    h3 {
+    h3, th {
         color: #FF601E;
+    }
+
+    table {
+        font-size: 85%;
     }
 
     pre {
@@ -108,6 +112,16 @@ body {
         }
     }
 
+    .has-light-background pre code {
+        background-color: #f5f5c0;
+        color: #444;
+    }
+
+    .has-light-background h1,
+    .has-light-background h2,
+    .has-light-background h3 {
+        color: #36a3ef;
+    }
 
     hr {
         border-color: #abb2bf;
@@ -164,6 +178,10 @@ body {
 
     .highlight {
         color: #42affa;
+    }
+
+    .xx-large {
+        font-size: 400%;
     }
 
     .callback {

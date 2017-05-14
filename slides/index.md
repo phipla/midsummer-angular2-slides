@@ -27,16 +27,11 @@ Intermède: architecture de l'application
 
 ### Jour 2
 
-Http et rxjs
-
-* Introduction à rxjs
+* Injection de dépendances
+* Introduction à rxjs et aux Observables
 * Utilisation de HTTP
-
-Routage
-
-Formulaires
-
-i18n
+* Routage
+* Utilisation de formulaires
 
 ---
 

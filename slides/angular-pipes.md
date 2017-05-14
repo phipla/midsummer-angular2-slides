@@ -6,7 +6,7 @@
 
 ## À quoi ça sert ?
 
-`alpaca.component.html`
+<div class="filename">alpaca.component.html</div>
 
 ```html
 <div class="clearfix">

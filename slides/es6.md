@@ -1,5 +1,7 @@
 # Introduction à ES6/ES2015
 
+<img src="resources/es6.svg" class="plain" style="width: 18vw; display: block; margin: 0 auto">
+
 ---
 
 ## Historique
@@ -14,13 +16,12 @@
 * arrow functions (`=>`)
 * for of
 * générateurs
-* ...
+* Promises
 
 ### ES7 finalisé en juin 2016
-* async / await
-* ...
 
-### ES8...
+### ES8
+* async/await
 
 ---
 
@@ -49,12 +50,12 @@ function varTest() {
 
 ```javascript
 function varTest() {
-  var x = 1;
+  let x = 1;
   if (true) {
-    var x = 2;  // same variable!
+    let x = 2;  // same variable!
     console.log(x);  // 2
   }
-  console.log(x);  // 2
+  console.log(x);  // 1
 }
 ```
 
@@ -73,7 +74,8 @@ function varTest() {
 }
 ```
 
-En ES6, il est généralement d'usage de ne plus utiliser `var` du tout, mais d'utiliser `let`ou `const`, selon le cas.
+En ES6, il est généralement d'usage de __ne plus utiliser `var` du tout__, mais d'utiliser `let`
+ou `const`, selon le cas.
 
 ---
 
@@ -117,7 +119,7 @@ Animal.prototype.speak = function speak() {
 };
 
 function Cat() {
-    Animal.call(this, 'meow')
+    Animal.call(this, 'meow');
 }
 
 Cat.prototype = Object.create(Animal.prototype);
@@ -183,8 +185,6 @@ console.log(duration.inMinutes); // 120
 ---
 
 ## Arrow functions
-
-Notation succincte pour les fonctions anonymes
 
 ### ES5
 
@@ -299,7 +299,7 @@ map.get(1); // 'One'
 map.get(obj); // 'Object'
 map.get({obj}); // undefined
 map.get(1); // 'One'
-map.get('1'); undefined
+map.get('1'); // undefined
 ```
 
 ---
@@ -326,8 +326,6 @@ Il n'est pas possible d'énumérer les valeurs contenues dans une `WeakMap`, ou 
 ---
 
 ## Opérateur `of`
-
-Permet d'itérer sur les propriétés d'un objet énumérable.
 
 ```javascript
 let iterable = [10, 20, 30];
@@ -364,7 +362,7 @@ Une promesse a une méthode `.catch()` qui permet de spécifier une fonction qui
 
 ```javascript
 const promise = new Promise((resolve, reject) => $.ajax({
-  url: 'http://midsummerweb.com',
+  url: 'https://midsummerweb.com',
   success: resolve,
   error: reject
 }))
@@ -384,7 +382,7 @@ Si les fonctions exécutées retournent une `Promise`, c'est la valeur de résol
 
 ```javascript
 const promise = new Promise((resolve, reject) => $.ajax({
-  url: 'http://midsummerweb.com',
+  url: 'https://midsummerweb.com',
   success: resolve,
   error: reject
 }))
@@ -462,6 +460,8 @@ Supporte les valeurs par défaut
 [a = 5, b = 7] = [1]; // a = 1; b = 7
 ```
 
+---
+
 ## Affectation par décomposition (destructuring)
 
 Permet d'échanger deux variables (ou plus)
@@ -513,5 +513,53 @@ import valeurA from 'module1';
 
 ---
 
-# Questions sur ES6 ?
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
 
+## TD ES6 - préparation
+
+1\. Créer un dossier ES6, contenant des répertoires src/ et lib/
+
+2\. Créer un projet
+
+```bash
+npm init -y
+npm install --save-dev babel-cli babel-preset-env
+```
+
+3\. Créer un fichier .babelrc
+
+```json
+{
+  "presets": ["env"]
+}
+```
+
+4\. Éditer package.json et mettre dans scripts
+
+```json
+{
+    "scripts": {
+        "build": "babel src -d lib",
+        "start": "node lib/index.js"
+    }
+}
+```
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+## TD ES6 - buts
+
+1. Créer **et exporter** une classe `Animal` dans `animal.js`
+  * Un animal a une méthode `walk` et une propriété `height`, et un getter `name`
+  * La méthode `walk` renvoie une Promise, qui se résoud après `height * 1000` ms, avec la chaîne `animal a fini de marcher`, animal étant remplacé par animal.name
+2. Créer, et exporter, dans un fichier `llama.js`, une classe `Llama` qui étend `Animal`, qui redéfinit `name`
+3. Créer, et exporter, dans un fichier `alpaca.js`, une classe `Alpaca` qui étend `Animal`, qui redéfinit `name`, et qui redéfinit `walk` pour que la promise retournée se résolve après `height * 500` ms
+4. Importer les deux classes dans `index.js`
+5. Initialiser un tableau de `Llama`s et un d'`Alpaca`s à partir d'un tableau d'objets JavaScript génériques en utilisant .map().
+6. Faire la course ! Utiliser Promise.race pour afficher l'animal le plus rapide.
+
+## TD ES6 - corrigés
+
+<div class="xx-large">https://git.io/v9MpJ</div>

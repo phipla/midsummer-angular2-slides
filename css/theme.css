@@ -318,8 +318,10 @@ body {
     font-weight: 200; }
   .reveal h2 {
     font-weight: 200; }
-  .reveal h3 {
+  .reveal h3, .reveal th {
     color: #FF601E; }
+  .reveal table {
+    font-size: 85%; }
   .reveal pre {
     font-size: 0.8em;
     margin: 1rem 0;
@@ -327,6 +329,13 @@ body {
     .reveal pre code {
       max-height: none;
       padding: 0.4em 0.8em; }
+  .reveal .has-light-background pre code {
+    background-color: #f5f5c0;
+    color: #444; }
+  .reveal .has-light-background h1,
+  .reveal .has-light-background h2,
+  .reveal .has-light-background h3 {
+    color: #36a3ef; }
   .reveal hr {
     border-color: #abb2bf;
     border-width: 2px;
@@ -361,6 +370,8 @@ body {
     color: #f84; }
   .reveal .highlight {
     color: #42affa; }
+  .reveal .xx-large {
+    font-size: 400%; }
   .reveal .callback {
     color: #fff !important;
     background: #48f;

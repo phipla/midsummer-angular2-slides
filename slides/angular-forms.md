@@ -361,7 +361,7 @@ export class Validators {
 
 ### Exemple: composant de recherche
 
-`search.component.html`
+<div class="filename">search.component.html</div>
 
 ```html
 <input

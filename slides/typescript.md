@@ -77,7 +77,7 @@ alapacaNames.push(51); // Erreur !
 ### Tuples
 
 ```typescript
-let alpacaWithAge: [ name, number ];
+let alpacaWithAge: [ string, number ];
 alpacaWithAge = ['Monica', 5]; // OK
 alpacaWithAge = [1, 2, 3]; // Erreur !
 
@@ -444,7 +444,7 @@ Prenons une fonction naïve permettant de trouve l'index d'un élément dans un 
 ```typescript
 function findInArray(array: number[], value: number): number {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === value) return i
+        if (array[i] === value) return i;
     }
 }
 
@@ -461,13 +461,13 @@ findInArray(['Sheep', 'Goat', 'Alpaca'], 'Alpaca'); // Erreur
 ```typescript
 function findInNumberArray(array: number[], value: number): number {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === value) return i
+        if (array[i] === value) return i;
     }
 }
 
 function findInStringArray(array: string[], value: string): number {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === value) return i
+        if (array[i] === value) return i;
     }
 }
 // function findInBooleanArray, etc etc
@@ -485,7 +485,7 @@ findInStringArray(['Sheep', 'Goat', 'Alpaca'], 'Alpaca'); // 2
 ```typescript
 function findInArray<T>(array: T[], value: T): number {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === value) return i
+        if (array[i] === value) return i;
     }
 }
 
@@ -579,7 +579,9 @@ class Alpaca {
 }
 
 class Human {
-    constructor( public name: string, public hasDrivingLicence: boolean ) {}
+    constructor(
+        public name: string, public hasDrivingLicence: boolean
+    ) {}
 }
 
 function sayMyName(me: Alpaca | Human) {
@@ -629,3 +631,110 @@ class Alpaca { /* ... */ }
 
 getAnimalProperties(Alpaca); // { name: 'Alpaca', description: '...' }
 ```
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+## TD TypeScript - préparation
+
+1\. Créer un dossier ts
+
+```bash
+npm init -y
+npm install --save typescript
+```
+
+2\. Initialiser le fichier tsconfig.json
+
+```json
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": false,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noLib": false,
+        "outDir": "./lib"
+    },
+    "include": [ "src/**/*" ],
+    "exclude": [ "node_modules" ]
+}
+```
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+
+## TD TypeScript - préparation - 2
+
+
+3\. Éditer package.json et mettre dans scripts
+
+```json
+{
+    "scripts": {
+        "build": "tsc",
+        "start": "node lib/index.js"
+    }
+}
+```
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+## TD TypeScript - préparation - 3
+
+<div class="filename">webservice.ts</div>
+
+```typescript
+const data = [
+  { name: 'Roberto', height: 0.67, age: 2 },
+  { name: 'Monica', height: 0.56, age: 1 },
+  { name: 'Bobby', height: 0.9, age: 5 },
+  { name: 'Marcel', height: 0.87, age: 1.2 },
+  { name: 'Albert', height: 0.89, age: 10 },
+];
+let rnd = () => Math.random() * 1000;
+
+export const get = (i: number) =>
+  new Promise(r => setTimeout(() => r(data[i]), rnd()));
+export const getAll = () =>
+  new Promise(r => setTimeout(() => r(data), rnd()));
+export const add = (item: any) =>
+  new Promise(r => setTimeout(() => {data.push(item); r(item)}, rnd()));
+export const set = (i: number, item: any) =>
+  new Promise(r => setTimeout(() => r(data[i] = item), rnd()));
+export const erase = (i: number) =>
+  new Promise(r => setTimeout(() => r(data.splice(i, 1)[0]), rnd()));
+```
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+## TD TypeScript - buts
+
+1. Importer les classes du TD précédent et les convertir en Typescript
+2. Créer une classe Typescript générique repository.ts
+    * qui contient un field `data` de type `Array<T>`
+    * qui prend, comme paramètre du constructeur, une fonction `(input: any) => T`
+    * qui dispose d'une méthode `get(position: number)` qui :
+        * récupère les données à partir du webservice mais uniquement si nécessaire
+        * retourne une `Promise<T>`, à partir des données retournées par le webService
+    * qui dispose des méthodes suivantes, qui modifient les données à la fois dans le webService, et dans le field data
+        * `add(item: T)`
+        * `set(i:number, item: T)`
+        * `erase(i:number)`
+    * toutes les trois retournent une `Promise<T>`
+
+---
+
+<!-- .slide: data-background="#ffffff" data-background-image="bower_components/reveal.js-plugins/chalkboard/img/whiteboard.png"-->
+
+## TD TypeScript - corrigés
+
+<div class="xx-large">https://git.io/v9MpJ</div>

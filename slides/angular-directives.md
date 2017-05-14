@@ -90,10 +90,6 @@ index, first, last, even, odd
 
 ---
 
-## NgFor, trackBy
-
----
-
 ## NgIf
 
 Affiche l'élément dans le DOM uniquement si la condition retourne vrai (ou une quelconque valeur <i>truish</i>)

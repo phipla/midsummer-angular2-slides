@@ -309,3 +309,7 @@ connectableObservable.connect();
 
 ### BehaviorSubject
 
+Un sujet qui représente une valeur unique qui change au cours du temps.
+
+Un observateur qui souscrit à un `BehaviorSubject` reçoit immédiatement la dernière valeur émise sur ce sujet.
+

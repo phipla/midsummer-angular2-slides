@@ -17,6 +17,16 @@
 
 ## Présentation du projet
 
+<figure>
+    <img src="resources/alpaca.jpg" style="width: 30vw">
+    <figcaption>
+        <div class="attribution">
+            By <a rel="nofollow" class="external text" href="http://www.flickr.com/people/34427468531@N01">Kyle Flood</a> from Victoria, British Columbia, Canada - <a rel="nofollow" class="external text" href="http://www.flickr.com/photos/34427468531@N01/167767636/">Alpaca</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=3434607">Link</a>
+        </div>
+    </figcaption>
+</figure>
+
+
 ---
 
 ## Mise en place
