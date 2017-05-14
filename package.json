@@ -22,6 +22,7 @@
     "url": "git@github.com:phipla/midsummer-angular2-slides.git"
   },
   "scripts": {
+    "start": "grunt serve",
     "test": "grunt test"
   },
   "dependencies": {}
